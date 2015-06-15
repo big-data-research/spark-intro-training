@@ -2,34 +2,25 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.spark.training</groupId>
-	<artifactId>wordcount</artifactId>
+	<artifactId>tweets-aggregations</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-
-	<repositories>
-		<repository>
-			<id>cloudera</id>
-			<url>https://repository.cloudera.com/artifactory/cloudera-repos/</url>
-		</repository>
-	</repositories>
-
 	<dependencies>
-
 		<dependency>
 			<groupId>org.apache.spark</groupId>
 			<artifactId>spark-core_2.10</artifactId>
-			<version>1.1.0-cdh5.2.1</version>
-			<exclusions>
-				<exclusion>
-					<artifactId>guava</artifactId>
-					<groupId>com.google.guava</groupId>
-				</exclusion>
-			</exclusions>
+			<version>1.2.0</version>
 		</dependency>
 
 		<dependency>
-			<groupId>com.google.guava</groupId>
-			<artifactId>guava</artifactId>
-			<version>14.0.1</version>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-streaming_2.10</artifactId>
+			<version>1.2.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-streaming-twitter_2.10</artifactId>
+			<version>1.2.0</version>
 		</dependency>
 
 		<dependency>
@@ -39,25 +30,20 @@
 		</dependency>
 
 		<dependency>
-			<groupId>org.apache.hadoop</groupId>
-			<artifactId>hadoop-common</artifactId>
-			<version>2.5.0-cdh5.2.1</version>
-			<exclusions>
-				<exclusion>
-					<artifactId>guava</artifactId>
-					<groupId>com.google.guava</groupId>
-				</exclusion>
-			</exclusions>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+			<version>2.8</version>
 		</dependency>
+
+		<dependency>
+			<groupId>org.jsoup</groupId>
+			<artifactId>jsoup</artifactId>
+			<version>1.7.2</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
-		<resources>
-			<resource>
-				<directory>resource</directory>
-			</resource>
-		</resources>
-		<sourceDirectory>src</sourceDirectory>
 		<finalName>${project.artifactId}</finalName>
 		<pluginManagement>
 			<plugins>
@@ -143,5 +129,4 @@
 
 
 	</build>
-
 </project>
